@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q-ROVER 대시보드</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🚙 Q-ROVER</h1>
+      <span id="conn" class="badge off">연결 끊김</span>
+    </header>
+
+    <main>
+      <!-- 왼쪽 : 카메라 영상 -->
+      <section class="card video">
+        <h2>카메라 <small>포트 4912 · 모델 컨테이너가 직접 보냅니다</small></h2>
+        <div id="videoBox">
+          <p id="videoPlaceholder">웹캠을 찾는 중...</p>
+          <!-- 박스가 그려진 영상은 7000번(이 페이지)이 아니라 4912번에서 온다.
+               컨테이너가 아직 안 떴을 수 있으므로 뜰 때까지 1초마다 재시도한다. -->
+          <iframe id="videoFrame" style="display: none"></iframe>
+        </div>
+      </section>
+
+      <!-- 오른쪽 : 상태 -->
+      <section class="side">
+        <div class="card">
+          <h2>거리 <small>VL53L0X · MCU</small></h2>
+          <div id="distance" class="big">—</div>
+          <div id="distanceNote" class="note">MCU 연결 대기 중</div>
+        </div>
+
+        <div class="card">
+          <h2>로버 상태</h2>
+          <div id="state" class="big state-go">직진</div>
+          <ul class="reasons">
+            <li>거리센서 <span id="tofFlag" class="flag">?</span> <small>MCU가 판단</small></li>
+            <li>카메라 <span id="visionFlag" class="flag">—</span> <small>AI가 판단</small></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Confidence 임계값</h2>
+          <input type="range" id="confSlider" min="0" max="1" step="0.01" value="0.5" />
+          <div class="row">
+            <span id="confValue">0.50</span>
+            <button id="confReset">되돌리기</button>
+          </div>
+          <p class="note">낮추면 오검출↑ · 높이면 놓침↑</p>
+        </div>
+
+        <div class="card">
+          <h2>최근 검출</h2>
+          <div id="detections"><p class="note">아직 없음</p></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="libs/socket.io.min.js"></script>
+    <script src="libs/arduino.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+name: q-rover-02
+description: "Q-ROVER 2차시 통합 - 거리센서와 AI로 멈추는 로버"
+ports: []
+bricks:
+- arduino:video_object_detection: {}
+- arduino:web_ui: {}
+icon: 🚙
