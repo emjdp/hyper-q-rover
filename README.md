@@ -41,11 +41,11 @@ DRV8833 모터 드라이버를 배선하고, H-브리지와 PWM으로 전진·�
 ## 코드 받기
 
 ```bash
-git clone https://github.com/emjdp/q-rover.git
+git clone https://github.com/emjdp/hyper-q-rover.git
 ```
 
 git이 없으면 이 페이지 위쪽 **Code → Download ZIP**으로 받아도 됩니다.
 
-슬라이드 PDF는 `weekN/slides/`, 실습 코드는 `weekN/labs/`에 있고, `app.yaml`이 있는 폴더 하나가 App Lab 앱 하나입니다. 원본 PPT는 [Releases](https://github.com/emjdp/q-rover/releases)에서 받을 수 있습니다.
+슬라이드 PDF는 `weekN/slides/`, 실습 코드는 `weekN/labs/`에 있고, `app.yaml`이 있는 폴더 하나가 App Lab 앱 하나입니다. 원본 PPT는 [Releases](https://github.com/emjdp/hyper-q-rover/releases)에서 받을 수 있습니다.
 
 보드 계정은 `arduino` / `hyper123`입니다.
