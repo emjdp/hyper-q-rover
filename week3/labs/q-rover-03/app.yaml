@@ -1,0 +1,12 @@
+name: q-rover-03
+description: "Q-ROVER 3차시 공통 미션 - 우리 팀 물체를 가운데로 맞추며 다가가기 (P제어)"
+ports: []
+bricks:
+- arduino:video_object_detection: {}
+# 우리 모델은 App Lab에서 Video Object Detection → AI models → Download → Brick Configuration으로 고르면
+# 위 줄이 자동으로 바뀝니다. 목록에 안 뜨면 .eim을 직접 넣고 위 줄을 아래처럼 바꾸세요 (자료 5-2).
+# - arduino:video_object_detection:
+#     variables:
+#       EI_V_OBJ_DETECTION_MODEL: /home/arduino/.arduino-bricks/ei-models/qrover_nano.eim
+- arduino:web_ui: {}
+icon: 🚙
